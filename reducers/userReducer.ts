@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface CounterState {
+export interface UserState {
   isLoading: boolean,
   username: string
 }
 
-const initialState: CounterState = {
+const initialState: UserState = {
   isLoading: false,
   username: ""
 }
@@ -25,10 +25,13 @@ const userSlice = createSlice({
     getSucceed: (state, action: PayloadAction<any>) => {
       state.username = action.payload.username
     },
+    setUser: (state, action: PayloadAction<any>) => {
+      state.username = action.payload.username
+    },  
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { getInPending, getSucceed } = userSlice.actions
+export const { getInPending, getSucceed, setUser } = userSlice.actions
 
 export default userSlice.reducer

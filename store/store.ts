@@ -1,9 +1,13 @@
+import gameReducer from '@/reducers/gameReducer'
+import roomsReducer from '@/reducers/roomsReducer'
 import { configureStore } from '@reduxjs/toolkit'
 import userReducer from '../reducers/userReducer'
 
 const store = configureStore({
   reducer: {
-    user: userReducer
+    user: userReducer,
+    rooms: roomsReducer,
+    game: gameReducer
   },
 })
 
